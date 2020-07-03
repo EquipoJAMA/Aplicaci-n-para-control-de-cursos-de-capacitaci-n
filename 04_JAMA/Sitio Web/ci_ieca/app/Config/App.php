@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost:80/ci_ieca/';
+	public $baseURL = 'http://www.iecacursostaranda.one-jama.com.mx';
 
 	/*
 	|--------------------------------------------------------------------------
