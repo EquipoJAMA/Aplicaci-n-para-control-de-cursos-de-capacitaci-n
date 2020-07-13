@@ -15,7 +15,15 @@ include_once('template/header.php');
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
         </ol>
         <div class="carousel-inner">
-            <?php if($cursos){ $i=0; foreach($cursos as $curso): ?>
+            <?php if($cursos){ $i=0; $o=0; foreach($cursos as $curso){ if($curso['fechaInicio'] < date('Y-m-d')){ $o++; if($o == count($cursos)){?> 
+                <div class="carousel-item active">
+            <img class="d-block w-100" src="<?= base_url("vendor/template/images/logotransparenciagob.png"); ?>" style="max-width: 100%; max-height: 100%; height: 210px; width: 100px; size: cover;" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5></h5>
+                <p></p>
+            </div>
+            </div>
+                <?php }}else{?>
             <div class="carousel-item <?php if($i == 0){ echo 'active';}?>">
             <img class="d-block w-100" src="<?= base_url("vendor/template/".$curso['imgCurso']); ?>" style="max-width: 100%; max-height: 100%; height: 210px; width: 100px; size: cover;" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
@@ -24,7 +32,7 @@ include_once('template/header.php');
                 0px 0px 4px #d6d6d6; color: white;  animation: sombreadoAnimado 1s ease-out;">Del <?= date('d/m/Y', strtotime($curso['fechaInicio'])); ?>, Al <?= date('d/m/Y', strtotime($curso['fechaTermino'])); ?></p>
             </div>
             </div>
-            <?php $i++; endforeach; }else{?>
+            <?php $i++; }}}else{?>
             <div class="carousel-item active">
             <img class="d-block w-100" src="<?= base_url("vendor/template/images/logotransparenciagob.png"); ?>" style="max-width: 100%; max-height: 100%; height: 210px; width: 100px; size: cover;" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
