@@ -12,7 +12,10 @@ class Cursos extends Controller{
 
     public function index(){
         $data = ['cursos' => $this->cursos->getListar(), 'titulo' => ' Cursos disponibles', 'faicon' => 'fa-folder'];
-        return view('cursos', $data);
+        return view('cursos', $data);   
     }
 
+    public function indexC(){
+        return view('admin/cursos/index.php');
+    }
 }

@@ -7,6 +7,6 @@ class  Conocenos extends Controller{
     public function index(){
         $data['titulo'] ='Conoce quienes somos';
         $data['faicon'] = 'fa-child mr-3';
-        return view('Conocenos', $data);
+        return view('Conocenos', $data = ['titulo' => 'Conoce quienes somos', 'faicon' => 'fa-child mr3']);
     }
 }
